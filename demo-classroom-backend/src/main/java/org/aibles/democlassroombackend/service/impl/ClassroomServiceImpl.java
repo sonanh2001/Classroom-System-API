@@ -26,8 +26,7 @@ public class ClassroomServiceImpl implements ClassroomService {
   public ClassroomDto createClassroom(ClassroomDto classroomDto) {
     log.info("create a classroom have info: {}", classroomDto);
     Classroom classroom = new Classroom();
-    classroomMapper.mapToEntity(classroom, classroomDto);
-    classroom = classroomRepository.save(classroom);
+    classroomRepository.save(classroomMapper.mapToEntity(classroom, classroomDto));
     return classroomMapper.mapToDto(classroom);
   }
 

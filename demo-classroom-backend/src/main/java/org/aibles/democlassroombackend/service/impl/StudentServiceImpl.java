@@ -24,8 +24,7 @@ public class StudentServiceImpl implements StudentService {
   public StudentDto addStudent(StudentDto studentDto) {
     log.info("add student have info: {}", studentDto);
     Student student = new Student();
-    studentMapper.mapToEntity(student, studentDto);
-    student = studentRepository.save(student);
+    student = studentRepository.save(studentMapper.mapToEntity(student, studentDto));
     return studentMapper.mapToDto(student);
   }
 
