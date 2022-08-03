@@ -1,0 +1,27 @@
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+  <changeSet id="20220729-2010-classroom-table" author="Son Anh">
+    <createTable tableName="classroom">
+      <column name="classroom_id" autoIncrement="true" type="bigint">
+        <constraints primaryKey="true" primaryKeyName="pk_classroom_id"/>
+      </column>
+      <column name="name" type="varchar(128)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="department" type="varchar(100)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="training_system" type="varchar(100)">
+        <constraints nullable="false"/>
+      </column>
+      <column name="students_number" type="int">
+        <constraints nullable="false"/>
+      </column>
+    </createTable>
+  </changeSet>
+
+</databaseChangeLog>
